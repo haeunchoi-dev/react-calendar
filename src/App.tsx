@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
-import { format, addMonths, subMonths } from "date-fns";
 import {
+  format,
+  addMonths,
+  subMonths,
   startOfMonth,
   endOfMonth,
   startOfWeek,
   endOfWeek,
   differenceInWeeks,
   addWeeks,
+  isSameMonth,
+  isSameDay,
+  addDays,
 } from "date-fns";
-import { isSameMonth, isSameDay, addDays } from "date-fns";
 import "./App.scss";
 
 interface RenderHeaderProps {
