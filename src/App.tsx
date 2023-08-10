@@ -17,11 +17,11 @@ interface RenderHeaderProps {
   prevMonth: () => void;
   nextMonth: () => void;
 }
-const RenderHeader: React.FC<RenderHeaderProps> = ({
+const RenderHeader = ({
   currentMonth,
   prevMonth,
   nextMonth,
-}) => {
+}: RenderHeaderProps) => {
   return (
     <div className="header row">
       <div className="col col-first">
@@ -37,7 +37,7 @@ const RenderHeader: React.FC<RenderHeaderProps> = ({
   );
 };
 
-const RenderDays: React.FC = () => {
+const RenderDays = () => {
   const date = ["Sun", "Mon", "Thu", "Wed", "Thrs", "Fri", "Sat"];
 
   return (
@@ -57,11 +57,11 @@ interface RenderCellsProps {
   onDateClick: (day: Date) => void;
 }
 
-const RenderCells: React.FC<RenderCellsProps> = ({
+const RenderCells = ({
   currentMonth,
   selectedDate,
   onDateClick,
-}) => {
+}: RenderCellsProps) => {
   const monthStart = startOfMonth(currentMonth);
   const monthEnd = endOfMonth(monthStart);
   const startDate = startOfWeek(monthStart);
@@ -112,7 +112,7 @@ const RenderCells: React.FC<RenderCellsProps> = ({
   );
 };
 
-const Calender: React.FC = () => {
+const Calender = () => {
   const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
@@ -142,7 +142,7 @@ const Calender: React.FC = () => {
   );
 };
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div style={{ width: "100%", height: "50vh" }}>
       <Calender />
